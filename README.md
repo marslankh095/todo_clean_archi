@@ -1,15 +1,51 @@
+A simple To-Do App in Clean Architecture (Layered) with:
+
+✅ Room Database (Entity, DAO, Database)
+
+✅ Repository & UseCase
+
+✅ ViewModel (with Coroutine + Logs)
+
+✅ Simple UI (XML)
+
+✅ Only Insert Feature
+
+✅ Urdu Roman Comments (samajhnay k liye asaan)
+
+🧩 Project Structure (Clean Architecture)
+com.example.todo
+│
+├── data
+│   ├── local
+│   │   ├── TodoEntity.kt
+│   │   ├── TodoDao.kt
+│   │   └── TodoDatabase.kt
+│   └── repository
+│       └── TodoRepositoryImpl.kt
+│
+├── domain
+│   ├── model
+│   │   └── Todo.kt
+│   ├── repository
+│   │   └── TodoRepository.kt
+│   └── usecase
+│       └── AddTodoUseCase.kt
+│
+├── presentation
+│   ├── TodoViewModel.kt
+│   └── MainActivity.kt
+│
+└── res
+    └── layout
+        └── activity_main.xml
+
 ![Preview](1.PNG)
- ![Preview](2.PNG)
-  ![Preview](3.PNG)
- ![Preview](4.PNG)
-  ![Preview](5.PNG)
 
 
-Excellent — ab hum isko weekly pill reminder system me convert karte hain
-jisme:
+ ✅ App Flow:
 
-✅ User medicine name, days, time, dose, aur unit set karega
-✅ App automatically har selected day pe notification / alarm trigger karega
-✅ Ye kaam AlarmManager, BroadcastReceiver, aur NotificationManager ke zariye hoga
-✅ Comments Roman Urdu me honge taake samajhna asaan ho
-✅ AndroidManifest.xml me required permissions aur receiver register honge
+User fills title & priority → presses "Add Todo"
+
+ViewModel → UseCase → Repository → DAO → Database
+
+Logcat me har step ka log show hoga
